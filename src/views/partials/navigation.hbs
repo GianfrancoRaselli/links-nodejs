@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width: 100vw;">
+    <div class="container">
+        <a class="navbar-brand" href="/">Favorites Links</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" style="margin-left: auto;">
+                {{#if user}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/links"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-link"></i> Links
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/links"><i class="fas fa-list"></i> All Links</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/links/add"><i class="fas fa-plus-circle"></i> Add A Link</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i> {{user.username}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/profile"><i class="fas fa-id-card"></i> Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/signin"><i class="fas fa-sign-in-alt"></i> SignIn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/signup"><i class="fas fa-user-plus"></i> SignUp</a>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav>
