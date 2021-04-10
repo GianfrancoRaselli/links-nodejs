@@ -44,7 +44,8 @@ router.get("/delete/:id", isLoggedIn, async (req, res) => {
     const { id } = req.params;
     await Link.destroy({
         where: {
-            id_link: id
+            id_link: id,
+            id_user: req.user.id_user
         }
     });
     res.redirect("/links");
